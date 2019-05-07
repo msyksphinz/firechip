@@ -8,6 +8,7 @@ import freechips.rocketchip.diplomacy.{LazyModule, ValName}
 import freechips.rocketchip.tile.XLen
 import testchipip._
 import icenet._
+import freechips.rocketchip.tile._
 
 object ConfigValName {
   implicit val valName = ValName("TestHarness")
@@ -73,6 +74,10 @@ class DefaultExampleConfig extends Config(
 
 class RoccExampleConfig extends Config(
   new WithRoccExample ++ new DefaultExampleConfig)
+
+class RoccMatrixMulConfig extends Config(
+  new WithRoccMatrixMul ++ new DefaultExampleConfig)
+
 
 class PWMConfig extends Config(new WithPWM ++ new BaseExampleConfig)
 
